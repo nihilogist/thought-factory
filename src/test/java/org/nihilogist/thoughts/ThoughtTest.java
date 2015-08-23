@@ -21,4 +21,12 @@ public class ThoughtTest {
         String expectedJson = "{\"quote\":\"I think therefore I am\",\"author\":\"Decartes\",\"source\":\"Some book\"}";
         assertEquals("Json conversion failed", expectedJson, jsonString);
     }
+
+    @Test
+    public void thoughtsShouldConvertNicelyToJsonEvenWithNullValues() {
+        Thought firstThought = new Thought("I think therefore I am", "Decartes", null);
+        String jsonString = firstThought.asJson();
+        String expectedJson = "{\"quote\":\"I think therefore I am\",\"author\":\"Decartes\"}";
+        assertEquals("Json conversion failed with null values", expectedJson, jsonString);
+    }
 }
