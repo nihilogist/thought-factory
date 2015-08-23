@@ -1,7 +1,14 @@
 package org.nihilogist.thoughts;
 
 
-public class ThoughtFactory {
+public interface ThoughtFactory {
+
+
+    /**
+     * Return a random thought
+     * @return a completely random thought from the collection.
+     */
+    Thought getThought();
 
 
 
